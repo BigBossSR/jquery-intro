@@ -33,3 +33,27 @@ var translateCharacter = function(character) {
   return character;
 }
 
+$(document).on("ready", function() {
+
+//listens for click
+  $("#inputTranslate").on("click", function() {
+ //gets the user's input from the `<textarea>` - puts in a variable
+ //NOTE: must pass a placeholder parameter (a) thru the function in map   
+    var $input = _.map((($("#inputText").val()).split("")), function(a){return translateCharacter(a)})
+
+  // var $input = ($("#inputText").val().split(""))
+  //  $input = _.map($input, function(a){return translateCharacter(a)})
+
+    $("#displayText").text($input.join(""))
+
+  })
+
+
+
+
+
+
+
+//sets the `<div id='displayText'>` content to the translated string
+
+})
